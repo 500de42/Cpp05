@@ -68,3 +68,8 @@ const char *Bureaucrat::GradeTooLowExeption::what() const throw()
     return "Grade too low\n";
 }
 
+
+void Bureaucrat::signForm()
+{
+    Form::beSigned(*this);
+}
