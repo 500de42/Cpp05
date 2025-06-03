@@ -1,12 +1,13 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
     try
     {
-        Bureaucrat a("leo", 1);
-        std::cout << a;
-        a.UpGrade();
+        Form k("Total", 25, 15);
+        Bureaucrat kalvin("kalvin", 30);
+        kalvin.signForm(k);
     }
     catch(std::exception &e)
     {
@@ -14,9 +15,9 @@ int main()
     }
     try
     {
-        Bureaucrat k("leo", 150);
-        std::cout << k;
-        k.DownGrade();
+        Form k("Total", 25, 15);
+        Bureaucrat kalvin("kalvin", 1);
+        kalvin.signForm(k);
     }
     catch(std::exception &e)
     {
