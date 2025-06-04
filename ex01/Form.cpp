@@ -3,10 +3,19 @@
 
 Form::Form() : Name("DefaultName") , sign(false), GradeToSign(150), GradeToExecute(150)
 {
+
 }
 
 Form::Form(std::string Name, int GradeToSign, int GradeToExec) : Name(Name),sign(false), GradeToSign(GradeToSign), GradeToExecute(GradeToExec)
 {
+    if (GradeToSign < 1)
+        throw Bureaucrat::GradeTooHighExeption();
+    else if (GradeToSign > 150)
+        throw Bureaucrat::GradeTooLowExeption();
+    if (GradeToExecute < 1)
+        throw Bureaucrat::GradeTooHighExeption();
+    else if (GradeToExecute > 150)
+        throw Bureaucrat::GradeTooLowExeption();
 }
 
 Form::Form(const Form &copy) : Name(copy.Name), sign(copy.GetSign()), GradeToSign(copy.GradeToSign), GradeToExecute(copy.GradeToExecute)

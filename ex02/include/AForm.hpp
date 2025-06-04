@@ -13,6 +13,7 @@ class AForm
         bool sign;
         const int GradeToSign;
         const int GradeToExecute;
+        bool exec;
     public : 
         AForm();
         AForm(std::string Name, int GradeToSign, int GradeToExec);
@@ -25,8 +26,10 @@ class AForm
         std::string GetName() const;
         int GetGradeToSign() const;
         int GetGradeToExecute() const;
-        virtual void executeForm(AForm const & form) = 0;
+        bool GetExec() const;
+        virtual void execute(Bureaucrat const & executor) const = 0;
         bool GetSign() const;
+        void setExec(bool Form);
         ////////////////////////////////
         class GradeTooHighException : public std::exception
         {
@@ -34,6 +37,21 @@ class AForm
                 virtual const char *what() const throw();
         };
         class GradeTooLowException : public std::exception
+        {
+            public :
+                virtual const char *what() const throw();
+        };
+        class GradeToExecTooLow : public std::exception
+        {
+            public :
+                virtual const char *what() const throw();
+        };
+        class FormNoSign : public std::exception
+        {
+            public :
+                virtual const char *what() const throw();
+        };
+        class FormAlreadyExec : public std::exception
         {
             public :
                 virtual const char *what() const throw();

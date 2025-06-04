@@ -1,5 +1,5 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../include/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
 
 Bureaucrat::Bureaucrat() : Name("DefaultName") , Grade(150)
 {
@@ -70,16 +70,16 @@ const char *Bureaucrat::GradeTooLowExeption::what() const throw()
 }
 
 
-// void Bureaucrat::signForm(AForm &form)
-// {
-//     if (form.GetGradeToSign() > this->GetGrade())
-//         std::cout << "The bureaucrat: " << this->GetName() << " has signed the form :" << form.GetName() << std::endl;
-//     else
-//         std::cout << "The bureaucrat: " << this->GetName() << " couldn't sign " << form.GetName() << " because his grade is too low" << std::endl;
-//     form.beSigned(*this);
-// }
+void Bureaucrat::signForm(AForm &form)
+{
+    if (form.GetGradeToSign() > this->GetGrade())
+        std::cout << "The bureaucrat: " << this->GetName() << " has signed the form :" << form.GetName() << std::endl;
+    else
+        std::cout << "The bureaucrat: " << this->GetName() << " couldn't sign " << form.GetName() << " because his grade is too low" << std::endl;
+    form.beSigned(*this);
+}
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    if (this->)
+    form.execute(*this);
 }

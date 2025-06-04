@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include <fstream>
 
 class ShrubberyCreationForm : public AForm
@@ -16,7 +17,8 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm(const ShrubberyCreationForm &copy);
         ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
         /////////////////////////////////////////////////////////////////////
-        virtual void executeForm(AForm const & form);
+        virtual void execute(Bureaucrat const & executor) const;
+        void TreeFile();
 };
 
 #endif
