@@ -1,13 +1,14 @@
 #include "../include/ShrubberyCreationForm.hpp"
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", 154, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("default", 145, 137)
 {
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : AForm("ShrubberyCreationForm", 154, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const target) : AForm("ShrubberyCreationForm", 145, 137), target(target)
 {
 
 }
@@ -17,15 +18,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 }
 
-void ShrubberyCreationForm::TreeFile()
+void ShrubberyCreationForm::TreeFile() const 
 {
-    std::string finalName = target + "_shrubbery";
+    std::string finalName = this->target + "_shrubbery";
     std::ofstream newFile(finalName.c_str());
 
-    if (newFile)
+    if (!newFile)
     {
         std::cerr << "Error file\n";
-        exit(1);
+        return ;
     }
     newFile << "       _-_\n";
     newFile << "    /~~   ~~\\\n";
@@ -39,20 +40,14 @@ void ShrubberyCreationForm::TreeFile()
     newFile.close();
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if (this->GetSign() == true)
     {
         if (executor.GetGrade() <= this->GetGradeToExecute())
         {
-            if (!this->GetExec())
-            {
-                std::cout << "The Bureaucrat " << executor.GetName() << "has ecxecuted the Form: " << this->GetName() << std::endl;
-                this->setExec(true);
-                this->TreeFile();
-            }
-            else
-                throw ShrubberyCreationForm::FormAlreadyExec();
+            std::cout << "The Bureaucrat " << executor.GetName() << " has ecxecuted the Form: " << this->GetName() << std::endl;
+            this->TreeFile();
         }
         else
         {
