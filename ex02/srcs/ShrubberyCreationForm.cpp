@@ -51,7 +51,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         }
         else
         {
-            std::cout << "The Bureaucrat " << executor.GetName() << "has not signed the Form: " << this->GetName() << "because ";
+            std::cout << "The Bureaucrat " << executor.GetName() << " has not ecxecuted the Form: " << this->GetName() << "because ";
             throw ShrubberyCreationForm::GradeToExecTooLow();
         }
     }

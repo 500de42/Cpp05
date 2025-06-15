@@ -42,3 +42,43 @@ int main()
         std::cout << e.what();
     }
 }
+
+
+int main()
+{
+    try
+    {
+        ShrubberyCreationForm k("akakak");
+        Bureaucrat kalvin("kalvin", 140);
+        kalvin.signForm(k);
+        kalvin.executeForm(k);
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what();
+    }
+/////////////////////////////////////////////////////
+    try
+    {
+        PresidentialPardonForm k("akakak");
+        Bureaucrat kalvin("kalvin", 19);
+        kalvin.signForm(k);
+        kalvin.executeForm(k);
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what();
+    }
+//////////////////////////////////////////////////////
+    try
+    {
+        RobotomyRequestForm k("akakak");
+        Bureaucrat kalvin("kalvin", 80);
+        kalvin.signForm(k);
+        kalvin.executeForm(k);
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what();
+    }
+}

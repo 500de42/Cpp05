@@ -2,12 +2,12 @@
 #include <fstream>
 #include <iostream>
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("default", 72, 25), target("default")
+RobotomyRequestForm::RobotomyRequestForm() : AForm("default", 72, 45), target("default")
 {
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 25), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
 
 }
@@ -43,7 +43,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
         }
         else
         {
-            std::cout << "The Bureaucrat " << executor.GetName() << "has not signed the Form: " << this->GetName() << "because ";
+            std::cout << "The Bureaucrat " << executor.GetName() << " has not ecxecuted the Form: " << this->GetName() << "because ";
             throw RobotomyRequestForm::GradeToExecTooLow();
         }
     }

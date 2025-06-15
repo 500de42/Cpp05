@@ -1,5 +1,5 @@
 #include "../include/AForm.hpp"
-#include "Bureaucrat.hpp"
+#include "../include/Bureaucrat.hpp"
 
 AForm::AForm() : Name("DefaultName") , sign(false), GradeToSign(150), GradeToExecute(150), exec(false)
 {
@@ -89,14 +89,3 @@ std::string AForm::GetName() const
 {
     return this->Name;
 }
-
-bool AForm::GetExec() const
-{
-    return this->exec;
-}
-
-// void AForm::setExec(bool Form) const
-// {
-//     if (Form == true)
-//         this->exec = true;
-// }

@@ -1,5 +1,5 @@
 SRC = srcs/Bureaucrat.cpp srcs/main.cpp srcs/AForm.cpp srcs/PresidentialPardonForm.cpp srcs/RobotomyRequestForm.cpp srcs/ShrubberyCreationForm.cpp
-NAME = Bureaucrat
+NAME = AForm
 FLAGS = c++ -Wall -Werror -Wextra -std=c++98
 
 all : $(NAME)

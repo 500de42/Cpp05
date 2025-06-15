@@ -17,19 +17,17 @@ class AForm
     public : 
         AForm();
         AForm(std::string Name, int GradeToSign, int GradeToExec);
-        ~AForm();
+        virtual ~AForm();
         AForm(const AForm &copy);
         AForm &operator=(const AForm &src);
         ////////////////////////////
         void beSigned(Bureaucrat const &b);
-        void execute(Bureaucrat const &b);
         std::string GetName() const;
         int GetGradeToSign() const;
         int GetGradeToExecute() const;
         bool GetExec() const;
         virtual void execute(Bureaucrat const & executor) const = 0;
         bool GetSign() const;
-        void setExec(bool Form) const;
         ////////////////////////////////
         class GradeTooHighException : public std::exception
         {
