@@ -19,6 +19,7 @@ class ShrubberyCreationForm : public AForm
         /////////////////////////////////////////////////////////////////////
         virtual void execute(Bureaucrat const & executor) const;
         void TreeFile() const;
+        std::string getTarget() const;
 };
 
 #endif

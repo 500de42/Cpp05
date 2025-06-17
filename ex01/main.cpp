@@ -1,6 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+std::ostream &operator<<(std::ostream &out, const Form &src);
+
 int main()
 {
     try
@@ -38,6 +40,8 @@ int main()
         Form k("Total", 25, 15);
         Bureaucrat kalvin("kalvin", 1);
         kalvin.signForm(k);
+        std::cout << kalvin;
+        std::cout << k;
     }
     catch(std::exception &e)
     {

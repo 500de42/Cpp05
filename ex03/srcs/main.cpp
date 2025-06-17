@@ -149,4 +149,24 @@ int main()
 //             delete k;
 //         }
 //     }
+// ////////////////////////////////////////////////////////////
+//    {
+//         Intern i;
+//         AForm* k = i.makeForm("Ro", "test3");
+//         if (k)
+//         {
+//             try
+//             {
+//                 RobotomyRequestForm k("akakak");
+//                 Bureaucrat kalvin("kalvin", 140);
+//                 kalvin.signForm(k);
+//                 kalvin.executeForm(k);
+//             }
+//             catch(std::exception &e)
+//             {
+//                 std::cout << e.what();
+//             }
+//             delete k;
+//         }
+//     }
 // }

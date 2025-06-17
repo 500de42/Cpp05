@@ -34,7 +34,7 @@ Form &Form::operator=(const Form &src)
 
 std::ostream &operator<<(std::ostream &out, const Form &src)
 {
-    out << "Form: " << src.GetName() << ", grade to sign: " << src.GetGradeToSign() << " grade to exec: " << src.GetGradeToExecute() << std::endl;
+    out << "Form: " << src.GetName() << ", grade min to sign: " << src.GetGradeToSign() << " grade min to exec: " << src.GetGradeToExecute() << std::endl;
     return out;
 }
 

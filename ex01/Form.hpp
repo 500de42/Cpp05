@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-// class Bureaucrat;
+class Bureaucrat;
 
 class Form
 {
@@ -38,5 +38,5 @@ class Form
         };
 };
 
-std::ostream &operator<<(std::ostream &c, Form &src);
+std::ostream &operator<<(std::ostream &out, const Form &src);
 #endif

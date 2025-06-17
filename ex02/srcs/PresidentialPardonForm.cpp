@@ -20,6 +20,12 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
     this->target = copy.target;
 }
 
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src)
+{
+    this->target = src.getTarget();
+    return *this;
+}
+
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const 
 {
     if (this->GetSign() == true)
@@ -36,4 +42,9 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
     }
     else 
         throw PresidentialPardonForm::FormNoSign();
+}
+
+std::string PresidentialPardonForm::getTarget() const
+{
+    return this->target;
 }

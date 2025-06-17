@@ -2,7 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-// #include "AForm.hpp"
+#include "Form.hpp"
 
 class Form;
 

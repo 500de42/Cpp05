@@ -24,8 +24,13 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AFor
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &src)
 {
-    this->target = src.target;
+    this->target = src.getTarget();
     return *this;
+}
+
+std::string RobotomyRequestForm::getTarget() const
+{
+    return this->target;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const

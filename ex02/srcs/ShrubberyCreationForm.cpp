@@ -18,6 +18,16 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy)
+{
+    this->target = copy.getTarget();
+}
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src)
+{
+    this->target = src.getTarget();
+    return *this;
+}
+
 void ShrubberyCreationForm::TreeFile() const 
 {
     std::string finalName = this->target + "_shrubbery";
@@ -57,4 +67,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     }
     else 
         throw ShrubberyCreationForm::FormNoSign();
+}
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+    return this->target;
 }

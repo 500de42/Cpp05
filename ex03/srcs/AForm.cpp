@@ -89,3 +89,14 @@ std::string AForm::GetName() const
 {
     return this->Name;
 }
+
+bool AForm::GetExec() const
+{
+    return this->exec;
+}
+
+// void AForm::setExec(bool Form) const
+// {
+//     if (Form == true)
+//         this->exec = true;
+// }
