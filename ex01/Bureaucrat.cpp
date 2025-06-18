@@ -72,7 +72,7 @@ const char *Bureaucrat::GradeTooLowExeption::what() const throw()
 
 void Bureaucrat::signForm(Form &form)
 {
-    if (form.GetGradeToSign() > this->GetGrade())
+    if (form.GetGradeToSign() >= this->GetGrade())
         std::cout << "The bureaucrat: " << this->GetName() << " has signed the form :" << form.GetName() << std::endl;
     else
         std::cout << "The bureaucrat: " << this->GetName() << " couldn't sign " << form.GetName() << " because his grade is too low" << std::endl;

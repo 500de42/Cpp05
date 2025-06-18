@@ -48,3 +48,9 @@ std::string PresidentialPardonForm::getTarget() const
 {
     return this->target;
 }
+
+std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm *src)
+{
+    out << "Form: " << src->GetName() << ", grade to sign: " << src->GetGradeToSign() << " grade to exec: " << src->GetGradeToExecute() << std::endl;
+    return out;
+}

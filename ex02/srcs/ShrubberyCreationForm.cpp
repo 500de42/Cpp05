@@ -73,3 +73,10 @@ std::string ShrubberyCreationForm::getTarget() const
 {
     return this->target;
 }
+
+
+std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm *src)
+{
+    out << "Form: " << src->GetName() << ", grade to sign: " << src->GetGradeToSign() << " grade to exec: " << src->GetGradeToExecute() << std::endl;
+    return out;
+}

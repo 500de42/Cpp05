@@ -55,3 +55,9 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
     else 
         throw RobotomyRequestForm::FormNoSign();
 }
+
+std::ostream &operator<<(std::ostream &out, const RobotomyRequestForm *src)
+{
+    out << "Form: " << src->GetName() << ", grade to sign: " << src->GetGradeToSign() << " grade to exec: " << src->GetGradeToExecute() << std::endl;
+    return out;
+}

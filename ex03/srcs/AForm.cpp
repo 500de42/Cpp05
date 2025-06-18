@@ -94,9 +94,3 @@ bool AForm::GetExec() const
 {
     return this->exec;
 }
-
-// void AForm::setExec(bool Form) const
-// {
-//     if (Form == true)
-//         this->exec = true;
-// }

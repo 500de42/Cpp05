@@ -61,7 +61,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         }
         else
         {
-            std::cout << "The Bureaucrat " << executor.GetName() << " has not ecxecuted the Form: " << this->GetName() << " because ";
+            std::cout << "The Bureaucrat " << executor.GetName() << " has not ecxecuted the Form: " << this->GetName() << "because ";
             throw ShrubberyCreationForm::GradeToExecTooLow();
         }
     }
@@ -72,4 +72,11 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 std::string ShrubberyCreationForm::getTarget() const
 {
     return this->target;
+}
+
+
+std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm *src)
+{
+    out << "Form: " << src->GetName() << ", grade to sign: " << src->GetGradeToSign() << " grade to exec: " << src->GetGradeToExecute() << std::endl;
+    return out;
 }

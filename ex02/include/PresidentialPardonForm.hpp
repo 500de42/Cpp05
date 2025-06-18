@@ -20,5 +20,7 @@ class PresidentialPardonForm : public AForm
         std::string getTarget() const;
 };
 
+std::ostream &operator<<(std::ostream &c, const PresidentialPardonForm *src);
+
 #endif
 

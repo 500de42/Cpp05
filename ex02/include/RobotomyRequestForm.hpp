@@ -22,4 +22,6 @@ class RobotomyRequestForm : public AForm
         std::string getTarget() const;
 };
 
+std::ostream &operator<<(std::ostream &c, const RobotomyRequestForm *src);
+
 #endif
